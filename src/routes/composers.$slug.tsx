@@ -1,8 +1,8 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
-import { getComposer } from "@/data/composers";
+import { getComposer, type Composer } from "@/data/composers";
 
 export const Route = createFileRoute("/composers/$slug")({
-  loader: ({ params }) => {
+  loader: ({ params }): { composer: Composer } => {
     const composer = getComposer(params.slug);
     if (!composer) throw notFound();
     return { composer };
