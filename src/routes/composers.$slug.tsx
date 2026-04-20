@@ -35,9 +35,10 @@ export const Route = createFileRoute("/composers/$slug")({
 });
 
 function ComposerDetail() {
-  const { composer } = Route.useLoaderData();
-  const masterpieces = composer.works.filter((w: Composer["works"][number]) => w.type === "代表作");
-  const popular = composer.works.filter((w: Composer["works"][number]) => w.type === "人氣作品");
+  const { composer } = Route.useLoaderData() as { composer: Composer };
+  type W = Composer["works"][number];
+  const masterpieces = composer.works.filter((w: W) => w.type === "代表作");
+  const popular = composer.works.filter((w: W) => w.type === "人氣作品");
 
   return (
     <article className="mx-auto max-w-5xl px-6 py-16">
@@ -84,7 +85,7 @@ function ComposerDetail() {
           </span>
         </div>
         <ul className="space-y-4">
-          {masterpieces.map((w) => (
+          {masterpieces.map((w: Composer["works"][number]) => (
             <WorkItem key={w.title} title={w.title} year={w.year} description={w.description} accent />
           ))}
         </ul>
@@ -99,7 +100,7 @@ function ComposerDetail() {
           </span>
         </div>
         <ul className="space-y-4">
-          {popular.map((w) => (
+          {popular.map((w: Composer["works"][number]) => (
             <WorkItem key={w.title} title={w.title} year={w.year} description={w.description} />
           ))}
         </ul>
