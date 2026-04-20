@@ -36,8 +36,8 @@ export const Route = createFileRoute("/composers/$slug")({
 
 function ComposerDetail() {
   const { composer } = Route.useLoaderData();
-  const masterpieces = composer.works.filter((w) => w.type === "代表作");
-  const popular = composer.works.filter((w) => w.type === "人氣作品");
+  const masterpieces = composer.works.filter((w: Composer["works"][number]) => w.type === "代表作");
+  const popular = composer.works.filter((w: Composer["works"][number]) => w.type === "人氣作品");
 
   return (
     <article className="mx-auto max-w-5xl px-6 py-16">
