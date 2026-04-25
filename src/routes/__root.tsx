@@ -41,6 +41,10 @@ export const Route = createRootRoute({
       { property: "og:description", content: "為熱愛古典音樂與想了解古典樂的您,推薦最動人的作曲家與經典作品。" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
+      { name: "twitter:title", content: "樂韻 Classica — 古典音樂推薦" },
+      { name: "twitter:description", content: "為熱愛古典音樂與想了解古典樂的您,推薦最動人的作曲家與經典作品。" },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2711c829-9b64-4a3a-944b-f6ac385b9e37/id-preview-d42658df--792cf715-e357-4880-82a6-c57aa05fde96.lovable.app-1776676882722.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/2711c829-9b64-4a3a-944b-f6ac385b9e37/id-preview-d42658df--792cf715-e357-4880-82a6-c57aa05fde96.lovable.app-1776676882722.png" },
     ],
     links: [
       { rel: "stylesheet", href: appCss },
